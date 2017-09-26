@@ -17,6 +17,8 @@ public static void main(String[] args) {
 	
 	
 	try {
+		
+		//did you know that the legendary Lucas Baizer wrote this?
 	KeyGenerator keygenerator = KeyGenerator.getInstance("DES");
     SecretKeySpec myDesKey = new SecretKeySpec("hello".getBytes(), "DES");
    
