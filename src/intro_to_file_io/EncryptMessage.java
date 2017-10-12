@@ -1,33 +1,30 @@
 package intro_to_file_io;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Stack;
 
-import javax.crypto.Cipher;
-import javax.crypto.KeyGenerator;
-import javax.crypto.SecretKey;
-import javax.crypto.spec.SecretKeySpec;
 import javax.swing.JOptionPane;
 
 public class EncryptMessage {
-public static void main(String[] args) {
-	String msg=JOptionPane.showInputDialog("Enter a mesage");
-	
-	StringBuilder build= new StringBuilder(msg);
-	JOptionPane.showMessageDialog(null, build.reverse());
-	
-	String ans=JOptionPane.showInputDialog("Enter the key to decrypt the message ");
-	
-	if (ans.equals("reverse")) {
-		JOptionPane.showMessageDialog(null, msg);
+	public static void main(String[] args) {
+		String msg = JOptionPane.showInputDialog("Enter a mesage");
+		String Emsg = "";
+
+		for (int i = 0; i < msg.length(); i++) {
+			Emsg += (char) (msg.charAt(i) * 5);
+		}
+		JOptionPane.showMessageDialog(null, "Message Encrypted: " + Emsg);
+
+		try {
+			FileWriter fw = new FileWriter("EncryptedText.txt");
+
+			fw.write(Emsg);
+
+			fw.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
 	}
-	
-	
-	
-	
-	
-}
+
 }

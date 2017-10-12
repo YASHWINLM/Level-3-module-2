@@ -1,3 +1,1 @@
-"This is a test file"
-"This is some text"
-"Here is some more text"
+//Copyright © 2017 by Bill Jobs
